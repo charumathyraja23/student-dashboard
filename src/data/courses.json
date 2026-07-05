@@ -1,0 +1,17 @@
+[
+  {
+    "id": 1,
+    "course": "React JS",
+    "duration": "3 Months"
+  },
+  {
+    "id": 2,
+    "course": "Node JS",
+    "duration": "2 Months"
+  },
+  {
+    "id": 3,
+    "course": "MongoDB",
+    "duration": "1 Month"
+  }
+]

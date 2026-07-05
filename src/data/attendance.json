@@ -1,0 +1,17 @@
+[
+  {
+    "id": 1,
+    "name": "Rahul",
+    "attendance": "95%"
+  },
+  {
+    "id": 2,
+    "name": "Priya",
+    "attendance": "90%"
+  },
+  {
+    "id": 3,
+    "name": "Arun",
+    "attendance": "88%"
+  }
+]
