@@ -1,7 +1,9 @@
 {
   "id": 1,
-  "name": "Rahul",
-  "age": 20,
+  "name": "Rahul Kumar",
+  "age": 21,
   "department": "Computer Science",
-  "email": "rahul@gmail.com"
+  "email": "rahul@gmail.com",
+  "phone": "9876543210",
+  "address": "Chennai, Tamil Nadu"
 }

@@ -1,17 +1,32 @@
 [
   {
     "id": 1,
-    "name": "Rahul",
-    "course": "React JS"
+    "name": "Rahul Kumar",
+    "course": "React JS",
+    "email": "rahul@gmail.com"
   },
   {
     "id": 2,
-    "name": "Priya",
-    "course": "Node JS"
+    "name": "Priya Sharma",
+    "course": "Node JS",
+    "email": "priya@gmail.com"
   },
   {
     "id": 3,
-    "name": "Arun",
-    "course": "Java"
+    "name": "Arun Raj",
+    "course": "MongoDB",
+    "email": "arun@gmail.com"
+  },
+  {
+    "id": 4,
+    "name": "Divya",
+    "course": "Java",
+    "email": "divya@gmail.com"
+  },
+  {
+    "id": 5,
+    "name": "Karthik",
+    "course": "Python",
+    "email": "karthik@gmail.com"
   }
 ]

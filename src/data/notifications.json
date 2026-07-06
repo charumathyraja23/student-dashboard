@@ -9,6 +9,14 @@
   },
   {
     "id": 3,
-    "message": "New Course Added: MongoDB"
+    "message": "New Python Batch Starts Monday"
+  },
+  {
+    "id": 4,
+    "message": "Project Review Meeting Friday"
+  },
+  {
+    "id": 5,
+    "message": "Certificates Available Next Week"
   }
 ]

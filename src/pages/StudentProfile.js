@@ -25,17 +25,38 @@ function StudentProfile() {
   }, []);
 
   if (loading) {
-    return <h2>Loading...</h2>;
+    return <h2 style={{ textAlign: "center" }}>Loading...</h2>;
   }
 
   return (
-    <div style={{ padding: "20px" }}>
-      <h1>Student Profile</h1>
+    <div className="profile-page">
+      <h1>👨‍🎓 Student Profile</h1>
 
-      <h3>Name: {profile.name}</h3>
-      <p>Age: {profile.age}</p>
-      <p>Department: {profile.department}</p>
-      <p>Email: {profile.email}</p>
+      <div className="profile-card">
+        <div className="profile-avatar">
+          {profile.name.charAt(0)}
+        </div>
+
+        <h2>{profile.name}</h2>
+
+        <hr style={{ margin: "15px 0" }} />
+
+        <p><b>🎂 Age :</b> {profile.age}</p>
+
+        <p><b>💻 Department :</b> {profile.department}</p>
+
+        <p><b>📚 Course :</b> {profile.course}</p>
+
+        <p><b>📧 Email :</b> {profile.email}</p>
+
+        <p><b>📱 Phone :</b> {profile.phone}</p>
+
+        <p><b>📍 Address :</b> {profile.address}</p>
+
+        <p><b>✅ Attendance : 96%</b> {profile.attendance}</p>
+
+        <p><b>🎓 CGPA : 7.5</b> {profile.cgpa}</p>
+      </div>
     </div>
   );
 }

@@ -9,12 +9,9 @@ function Courses() {
   useEffect(() => {
     const getCourses = async () => {
       try {
-        const response = await axios.get(
-          "https://dummy-api-not-working.com/courses"
-        );
+        const response = await axios.get("https://dummy-api-not-working.com/courses");
         setCourses(response.data);
-      } catch (error) {
-        console.log("API Failed. Loading Mock Data...");
+      } catch {
         setCourses(coursesData);
       } finally {
         setLoading(false);
@@ -24,21 +21,21 @@ function Courses() {
     getCourses();
   }, []);
 
-  if (loading) {
-    return <h2>Loading...</h2>;
-  }
+  if (loading) return <h2>Loading...</h2>;
 
   return (
-    <div style={{ padding: "20px" }}>
-      <h1>Courses</h1>
+    <div className="page">
+      <h1>📚 Courses</h1>
 
-      {courses.map((course) => (
-        <div key={course.id}>
-          <h3>{course.course}</h3>
-          <p>Duration: {course.duration}</p>
-          <hr />
-        </div>
-      ))}
+      <div className="student-container">
+        {courses.map((course) => (
+          <div className="student-card" key={course.id}>
+            <h2>{course.course}</h2>
+            <p>📅 {course.duration}</p>
+            <p>👨‍🏫 {course.trainer}</p>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }

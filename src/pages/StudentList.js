@@ -9,7 +9,6 @@ function StudentList() {
   useEffect(() => {
     const getStudents = async () => {
       try {
-        // Wrong API URL (intentionally)
         const response = await axios.get(
           "https://dummy-api-not-working.com/students"
         );
@@ -26,20 +25,28 @@ function StudentList() {
   }, []);
 
   if (loading) {
-    return <h2>Loading...</h2>;
+    return <h2 style={{ textAlign: "center" }}>Loading...</h2>;
   }
 
   return (
-    <div style={{ padding: "20px" }}>
-      <h1>Student List</h1>
+    <div className="page">
+      <h1>👨‍🎓 Student List</h1>
 
-      {students.map((student) => (
-        <div key={student.id}>
-          <h3>{student.name}</h3>
-          <p>{student.course}</p>
-          <hr />
-        </div>
-      ))}
+      <div className="student-container">
+        {students.map((student) => (
+          <div className="student-card" key={student.id}>
+            <div className="avatar">
+              {student.name.charAt(0)}
+            </div>
+
+            <h2>{student.name}</h2>
+
+            <p><b>Course:</b> {student.course}</p>
+
+            <p><b>Email:</b> {student.email}</p>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }

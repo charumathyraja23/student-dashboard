@@ -1,17 +1,27 @@
 [
   {
     "id": 1,
-    "name": "Rahul",
-    "attendance": "95%"
+    "name": "Rahul Kumar",
+    "attendance": "96%"
   },
   {
     "id": 2,
-    "name": "Priya",
-    "attendance": "90%"
+    "name": "Priya Sharma",
+    "attendance": "94%"
   },
   {
     "id": 3,
-    "name": "Arun",
-    "attendance": "88%"
+    "name": "Arun Raj",
+    "attendance": "91%"
+  },
+  {
+    "id": 4,
+    "name": "Divya",
+    "attendance": "98%"
+  },
+  {
+    "id": 5,
+    "name": "Karthik",
+    "attendance": "93%"
   }
 ]

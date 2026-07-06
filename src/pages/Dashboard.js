@@ -25,17 +25,39 @@ function Dashboard() {
   }, []);
 
   if (loading) {
-    return <h2>Loading...</h2>;
+    return <h2 style={{ textAlign: "center" }}>Loading...</h2>;
   }
 
   return (
-    <div style={{ padding: "20px" }}>
-      <h1>Student Dashboard</h1>
+    <div className="dashboard">
 
-      <h3>Total Students: {data.totalStudents}</h3>
-      <h3>Total Courses: {data.totalCourses}</h3>
-      <h3>Attendance: {data.attendance}</h3>
-      <h3>Notifications: {data.notifications}</h3>
+      <h1>🎓 Student Dashboard</h1>
+      <p>Welcome to Student Management System</p>
+
+      <div className="card-container">
+
+        <div className="card">
+          <h2>👨‍🎓 Students</h2>
+          <h1>{data.totalStudents}</h1>
+        </div>
+
+        <div className="card">
+          <h2>📚 Courses</h2>
+          <h1>{data.totalCourses}</h1>
+        </div>
+
+        <div className="card">
+          <h2>✅ Attendance</h2>
+          <h1>{data.attendance}</h1>
+        </div>
+
+        <div className="card">
+          <h2>🔔 Notifications</h2>
+          <h1>{data.notifications}</h1>
+        </div>
+
+      </div>
+
     </div>
   );
 }

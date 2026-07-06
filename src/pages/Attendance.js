@@ -9,12 +9,9 @@ function Attendance() {
   useEffect(() => {
     const getAttendance = async () => {
       try {
-        const response = await axios.get(
-          "https://dummy-api-not-working.com/attendance"
-        );
+        const response = await axios.get("https://dummy-api-not-working.com/attendance");
         setAttendance(response.data);
-      } catch (error) {
-        console.log("API Failed. Loading Mock Data...");
+      } catch {
         setAttendance(attendanceData);
       } finally {
         setLoading(false);
@@ -24,21 +21,20 @@ function Attendance() {
     getAttendance();
   }, []);
 
-  if (loading) {
-    return <h2>Loading...</h2>;
-  }
+  if (loading) return <h2>Loading...</h2>;
 
   return (
-    <div style={{ padding: "20px" }}>
-      <h1>Attendance</h1>
+    <div className="page">
+      <h1>✅ Attendance</h1>
 
-      {attendance.map((student) => (
-        <div key={student.id}>
-          <h3>{student.name}</h3>
-          <p>Attendance: {student.attendance}</p>
-          <hr />
-        </div>
-      ))}
+      <div className="student-container">
+        {attendance.map((student) => (
+          <div className="student-card" key={student.id}>
+            <h2>{student.name}</h2>
+            <h3 style={{ color: "green" }}>{student.attendance}</h3>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }

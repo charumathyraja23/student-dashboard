@@ -9,12 +9,9 @@ function Notifications() {
   useEffect(() => {
     const getNotifications = async () => {
       try {
-        const response = await axios.get(
-          "https://dummy-api-not-working.com/notifications"
-        );
+        const response = await axios.get("https://dummy-api-not-working.com/notifications");
         setNotifications(response.data);
-      } catch (error) {
-        console.log("API Failed. Loading Mock Data...");
+      } catch {
         setNotifications(notificationsData);
       } finally {
         setLoading(false);
@@ -24,18 +21,15 @@ function Notifications() {
     getNotifications();
   }, []);
 
-  if (loading) {
-    return <h2>Loading...</h2>;
-  }
+  if (loading) return <h2>Loading...</h2>;
 
   return (
-    <div style={{ padding: "20px" }}>
-      <h1>Notifications</h1>
+    <div className="page">
+      <h1>🔔 Notifications</h1>
 
       {notifications.map((item) => (
-        <div key={item.id}>
-          <p>{item.message}</p>
-          <hr />
+        <div className="notification-card" key={item.id}>
+          {item.message}
         </div>
       ))}
     </div>
