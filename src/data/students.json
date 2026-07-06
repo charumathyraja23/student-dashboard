@@ -2,31 +2,41 @@
   {
     "id": 1,
     "name": "Rahul Kumar",
-    "course": "React JS",
-    "email": "rahul@gmail.com"
+    "age": 21,
+    "department": "Computer Science",
+    "email": "rahul@gmail.com",
+    "phone": "9876543210"
   },
   {
     "id": 2,
     "name": "Priya Sharma",
-    "course": "Node JS",
-    "email": "priya@gmail.com"
+    "age": 20,
+    "department": "Information Technology",
+    "email": "priya@gmail.com",
+    "phone": "9876543211"
   },
   {
     "id": 3,
-    "name": "Arun Raj",
-    "course": "MongoDB",
-    "email": "arun@gmail.com"
+    "name": "Arjun Raj",
+    "age": 22,
+    "department": "Electronics",
+    "email": "arjun@gmail.com",
+    "phone": "9876543212"
   },
   {
     "id": 4,
-    "name": "Divya",
-    "course": "Java",
-    "email": "divya@gmail.com"
+    "name": "Sneha Reddy",
+    "age": 21,
+    "department": "Mechanical",
+    "email": "sneha@gmail.com",
+    "phone": "9876543213"
   },
   {
     "id": 5,
-    "name": "Karthik",
-    "course": "Python",
-    "email": "karthik@gmail.com"
+    "name": "Karthik S",
+    "age": 23,
+    "department": "Civil",
+    "email": "karthik@gmail.com",
+    "phone": "9876543214"
   }
 ]

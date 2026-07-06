@@ -7,35 +7,59 @@ function Courses() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const getCourses = async () => {
+    const fetchCourses = async () => {
       try {
-        const response = await axios.get("https://dummy-api-not-working.com/courses");
+        const response = await axios.get(
+          "https://dummy-api-not-working.com/courses"
+        );
         setCourses(response.data);
-      } catch {
+      } catch (error) {
+        console.log("API Failed. Loading Mock Data...");
         setCourses(coursesData);
       } finally {
         setLoading(false);
       }
     };
 
-    getCourses();
+    fetchCourses();
   }, []);
 
-  if (loading) return <h2>Loading...</h2>;
+  if (loading) {
+    return <h2 className="loading">Loading Courses...</h2>;
+  }
 
   return (
     <div className="page">
       <h1>📚 Courses</h1>
 
-      <div className="student-container">
-        {courses.map((course) => (
-          <div className="student-card" key={course.id}>
-            <h2>{course.course}</h2>
-            <p>📅 {course.duration}</p>
-            <p>👨‍🏫 {course.trainer}</p>
+      {courses.map((course) => (
+        <div className="course-card" key={course.id}>
+          <h2>{course.name}</h2>
+
+          <p>
+            <strong>👨‍🏫 Trainer:</strong> {course.trainer}
+          </p>
+
+          <p>
+            <strong>📅 Duration:</strong> {course.duration}
+          </p>
+
+          <p>
+            <strong>📈 Progress:</strong> {course.progress}%
+          </p>
+
+          <div className="progress">
+            <div
+              className="progress-bar"
+              style={{ width: `${course.progress}%` }}
+            ></div>
           </div>
-        ))}
-      </div>
+
+          <br />
+
+          <button>Continue Learning</button>
+        </div>
+      ))}
     </div>
   );
 }

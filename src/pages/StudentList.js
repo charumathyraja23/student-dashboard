@@ -5,9 +5,10 @@ import studentsData from "../data/students.json";
 function StudentList() {
   const [students, setStudents] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [search, setSearch] = useState("");
 
   useEffect(() => {
-    const getStudents = async () => {
+    const fetchStudents = async () => {
       try {
         const response = await axios.get(
           "https://dummy-api-not-working.com/students"
@@ -21,29 +22,67 @@ function StudentList() {
       }
     };
 
-    getStudents();
+    fetchStudents();
   }, []);
 
+  const filteredStudents = students.filter((student) =>
+    student.name.toLowerCase().includes(search.toLowerCase())
+  );
+
   if (loading) {
-    return <h2 style={{ textAlign: "center" }}>Loading...</h2>;
+    return <h2 className="loading">Loading Students...</h2>;
   }
 
   return (
     <div className="page">
       <h1>👨‍🎓 Student List</h1>
 
-      <div className="student-container">
-        {students.map((student) => (
+      <div style={{ textAlign: "center", marginBottom: "25px" }}>
+        <input
+          type="text"
+          placeholder="🔍 Search Student..."
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+          style={{
+            width: "350px",
+            padding: "12px",
+            borderRadius: "10px",
+            border: "2px solid #2563eb",
+            outline: "none",
+            fontSize: "16px",
+          }}
+        />
+      </div>
+
+      <div className="student-grid">
+        {filteredStudents.map((student) => (
           <div className="student-card" key={student.id}>
-            <div className="avatar">
-              {student.name.charAt(0)}
-            </div>
+            <img
+              src={`https://ui-avatars.com/api/?name=${student.name}&background=2563eb&color=fff&size=128`}
+              alt={student.name}
+            />
 
-            <h2>{student.name}</h2>
+            <h3>{student.name}</h3>
 
-            <p><b>Course:</b> {student.course}</p>
+            <p>
+              <strong>🎂 Age:</strong> {student.age}
+            </p>
 
-            <p><b>Email:</b> {student.email}</p>
+            <p>
+              <strong>💻 Department:</strong> {student.department}
+            </p>
+
+            <p>
+              <strong>📧 Email:</strong> {student.email}
+            </p>
+
+            <p>
+              <strong>📞 Phone:</strong> {student.phone}
+            </p>
+
+            <button style={{ marginTop: "15px" }}>
+              View Profile
+            </button>
           </div>
         ))}
       </div>

@@ -2,56 +2,35 @@ import { Link } from "react-router-dom";
 
 function Navbar() {
   return (
-    <nav
-      style={{
-        backgroundColor: "#1e3a8a",
-        padding: "15px",
-        display: "flex",
-        justifyContent: "center",
-        gap: "20px",
-      }}
-    >
-      <Link
-        to="/"
-        style={{ color: "white", textDecoration: "none", fontWeight: "bold" }}
-      >
-        Dashboard
-      </Link>
+    <nav className="navbar">
+      <div className="logo">
+        🎓 Student Dashboard
+      </div>
 
-      <Link
-        to="/students"
-        style={{ color: "white", textDecoration: "none", fontWeight: "bold" }}
-      >
-        Student List
-      </Link>
+      <div className="nav-links">
+        <Link to="/">🏠 Dashboard</Link>
 
-      <Link
-        to="/profile"
-        style={{ color: "white", textDecoration: "none", fontWeight: "bold" }}
-      >
-        Student Profile
-      </Link>
+        <Link to="/students">👨‍🎓 Students</Link>
 
-      <Link
-        to="/courses"
-        style={{ color: "white", textDecoration: "none", fontWeight: "bold" }}
-      >
-        Courses
-      </Link>
+        <Link to="/profile">👤 Profile</Link>
 
-      <Link
-        to="/attendance"
-        style={{ color: "white", textDecoration: "none", fontWeight: "bold" }}
-      >
-        Attendance
-      </Link>
+        <Link to="/courses">📚 Courses</Link>
 
-      <Link
-        to="/notifications"
-        style={{ color: "white", textDecoration: "none", fontWeight: "bold" }}
-      >
-        Notifications
-      </Link>
+        <Link to="/attendance">📅 Attendance</Link>
+
+        <Link to="/notifications" className="notification-link">
+          🔔 Notifications
+          <span className="badge">5</span>
+        </Link>
+      </div>
+
+      <div className="user-profile">
+        <div className="user-avatar">C</div>
+        <div className="user-info">
+          <h4>Charumathy</h4>
+          <p>Student</p>
+        </div>
+      </div>
     </nav>
   );
 }

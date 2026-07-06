@@ -1,32 +1,37 @@
 [
   {
     "id": 1,
-    "course": "React JS",
-    "duration": "3 Months",
-    "trainer": "Mr. Kumar"
+    "name": "React JS",
+    "trainer": "John David",
+    "duration": "30 Days",
+    "progress": 90
   },
   {
     "id": 2,
-    "course": "Node JS",
-    "duration": "2 Months",
-    "trainer": "Ms. Priya"
+    "name": "JavaScript",
+    "trainer": "Rahul Kumar",
+    "duration": "25 Days",
+    "progress": 75
   },
   {
     "id": 3,
-    "course": "MongoDB",
-    "duration": "1 Month",
-    "trainer": "Mr. Arun"
+    "name": "HTML & CSS",
+    "trainer": "Priya Sharma",
+    "duration": "15 Days",
+    "progress": 100
   },
   {
     "id": 4,
-    "course": "Java",
-    "duration": "4 Months",
-    "trainer": "Mr. Ravi"
+    "name": "Bootstrap",
+    "trainer": "Karthik",
+    "duration": "10 Days",
+    "progress": 80
   },
   {
     "id": 5,
-    "course": "Python",
-    "duration": "3 Months",
-    "trainer": "Ms. Divya"
+    "name": "Axios API",
+    "trainer": "Sneha Reddy",
+    "duration": "20 Days",
+    "progress": 65
   }
 ]
